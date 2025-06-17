@@ -92,11 +92,17 @@ input, select {
 }
 
 /* Right icon (eye) for password */
-#togglePassword {
+.input-icon i.fa-eye,
+.input-icon i.fa-eye-slash {
   right: 10px;
-  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
+  color: #888;
+  font-size: 14px;
 }
+
 
 /* Input padding to fit both icons */
 .input-icon input {
