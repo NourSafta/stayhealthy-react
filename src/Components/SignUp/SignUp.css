@@ -1,120 +1,126 @@
-/* Base styling */
+/* General Reset */
 body {
-    background: #f5f5f5;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* Container */
-  .signup-container {
-    background-color: #fff;
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-  }
-  
-  /* Headings */
-  .signup-container h2 {
-    margin-bottom: 8px;
-    font-size: 24px;
-    font-weight: 700;
-  }
-  
-  .signup-container p {
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
-  
-  .signup-container p a {
-    color: #2155CD;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  /* Form */
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    text-align: left;
-  }
-  
-  /* Labels */
-  label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 3px;
-  }
-  
-  /* Inputs and select */
-  input, select {
-    padding: 10px 12px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Input with icons */
-  .input-icon {
-    position: relative;
-    width: 100%;
-  }
-  
-  .input-icon i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    pointer-events: none;
-    font-size: 14px;
-  }
-  
-  /* Left icon spacing */
-  .input-icon i.fa-envelope,
-  .input-icon i.fa-user {
-    left: 10px;
-  }
-  
-  /* Right icon (eye) for password */
-  #togglePassword {
-    right: 10px;
-    pointer-events: auto;
-    cursor: pointer;
-  }
-  
-  /* Input padding to fit both icons */
-  .input-icon input {
-    padding: 10px 35px 10px 32px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Submit button */
-  button[type="submit"] {
-    padding: 12px;
-    background-color: #2155CD;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #1a45a0;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+}
+
+/* Wrapper to center everything */
+.signup-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  padding-top: 80px;
+  background: #f5f5f5;
+}
+
+
+/* Container */
+.signup-container {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* Headings */
+.signup-container h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.signup-container p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.signup-container p a {
+  color: #2155CD;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+/* Inputs and select */
+input, select {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Input with icons */
+.input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Left icon spacing */
+.input-icon i.fa-envelope,
+.input-icon i.fa-user {
+  left: 10px;
+}
+
+/* Right icon (eye) for password */
+#togglePassword {
+  right: 10px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Input padding to fit both icons */
+.input-icon input {
+  padding: 10px 35px 10px 32px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+button[type="submit"] {
+  padding: 12px;
+  background-color: #2155CD;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #1a45a0;
+}
