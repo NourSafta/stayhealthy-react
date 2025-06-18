@@ -11,6 +11,7 @@
     max-width: 100%;
 }
 .search-results-container .doctorcard{
+    margin-top: 40px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -18,19 +19,22 @@
     margin-bottom: 20px;
     padding: 18px;
     border-radius: 4px;
+    gap: 20px;
     background-color: #fff;
 
 }
 
-.search-results-container>h2 {
-    text-align: left;
+.searchpage-container h2 {
     font-size: 24px;
     font-weight: 700;
-}
-
-.search-results-container>h3 {
-    margin-top: 12px;
-    color: #2d2d32;
-    text-align: left;
-    font-size: 15px;
-}
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+.searchpage-container h3 {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+    text-align: center;
+  }
