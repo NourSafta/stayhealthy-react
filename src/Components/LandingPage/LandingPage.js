@@ -1,7 +1,10 @@
 import React from "react";
 import "./LandingPage.css";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
+  const isLoggedIn = sessionStorage.getItem("auth-token");
+
   return (
     <section className="hero-section">
       <div>
@@ -17,9 +20,11 @@ const LandingPage = () => {
             quae ducimus. Suscipit omnis quibusdam non cum rem voluptatem!
           </h4>
 
-          <a href="#services">
-            <button className="button">Get Started</button>
-          </a>
+          <Link to={isLoggedIn ? "/instant-consultation" : "/signup"}>
+            <button className="button">
+              {isLoggedIn ? "Instant Consultation" : "Get Started"}
+            </button>
+          </Link>
         </div>
       </div>
     </section>
