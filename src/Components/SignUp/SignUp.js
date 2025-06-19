@@ -95,18 +95,19 @@ const SignUp = () => {
           <label>Password</label>
           <div className="input-icon">
             <input
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="*********"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="*********"
             />
             <i
-              className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
-              onClick={() => setShowPassword(!showPassword)}
-              style={{ cursor: "pointer" }}
+                className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ cursor: "pointer" }}
             ></i>
-          </div>
+           </div>
+
 
           {errorMsg && <p style={{ color: "red" }}>{errorMsg}</p>}
 

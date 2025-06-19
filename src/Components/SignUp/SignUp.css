@@ -70,20 +70,23 @@ input, select {
   box-sizing: border-box;
 }
 
-/* Input with icons */
 .input-icon {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon input {
   width: 100%;
+  padding-right: 40px; 
 }
 
 .input-icon i {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-  font-size: 14px;
-  pointer-events: none;
+  right: 10px;
+  color: #666;
 }
+
 
 /* Left icon spacing */
 .input-icon i.fa-envelope,

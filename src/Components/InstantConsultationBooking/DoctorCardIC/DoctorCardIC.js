@@ -17,7 +17,10 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
   };
 
   const handleFormSubmit = (appointmentData) => {
-    const newAppointment = { id: uuidv4(), ...appointmentData };
+    const newAppointment = {
+      id: uuidv4(),
+      ...appointmentData, // includes name, phoneNumber, date, time
+    };
     setAppointments([...appointments, newAppointment]);
     setShowModal(false);
   };
@@ -73,12 +76,21 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
 
               {appointments.length > 0 ? (
                 <>
-                  <h3 style={{ textAlign: 'center' }}>Appointment Booked!</h3>
+                  <h3 className="appointment-booked-title">Appointment Booked!</h3>
                   {appointments.map((appointment) => (
                     <div className="bookedInfo" key={appointment.id}>
-                      <p>Name: {appointment.name}</p>
-                      <p>Phone Number: {appointment.phoneNumber}</p>
-                      <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
+                      <p><strong>Doctor:</strong> {name}</p>
+                      <p><strong>Speciality:</strong> {speciality}</p>
+                      <p><strong>Name:</strong> {appointment.name}</p>
+                      <p><strong>Phone Number:</strong> {appointment.phoneNumber}</p>
+                      <p><strong>Date of Appointment:</strong> {appointment.date}</p>
+                      <p><strong>Time Slot:</strong> {appointment.time}</p>
+                      <button
+                        className="cancel-appointment-btn"
+                        onClick={() => handleCancel(appointment.id)}
+                      >
+                        Cancel Appointment
+                      </button>
                     </div>
                   ))}
                 </>
