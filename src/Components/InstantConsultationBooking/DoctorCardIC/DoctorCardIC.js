@@ -9,9 +9,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
 
-  const handleBooking = () => {
-    setShowModal(true);
-  };
+  const handleBooking = () => setShowModal(true);
 
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter(app => app.id !== appointmentId);
@@ -19,10 +17,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
   };
 
   const handleFormSubmit = (appointmentData) => {
-    const newAppointment = {
-      id: uuidv4(),
-      ...appointmentData,
-    };
+    const newAppointment = { id: uuidv4(), ...appointmentData };
     setAppointments([...appointments, newAppointment]);
     setShowModal(false);
   };
@@ -30,14 +25,13 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
   return (
     <div className="doctor-card-container">
       <div className="doctor-card-details-container">
-      <div className="doctor-card-profile-image-container">
-        <img
+        <div className="doctor-card-profile-image-container">
+          <img
             src={`${process.env.PUBLIC_URL}/doctor1.jpg`}
             alt="Doctor"
             className="doctor-card-profile-img"
-        />
-      </div>
-
+          />
+        </div>
         <div className="doctor-card-details">
           <div className="doctor-card-detail-name">{name}</div>
           <div className="doctor-card-detail-speciality">{speciality}</div>
@@ -61,14 +55,14 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
           open={showModal}
           onClose={() => setShowModal(false)}
         >
-          {(close) => (
-            <div className="doctorbg" style={{ height: '100vh', overflowY: 'auto' }}>
+          <div className="popup-wrapper">
+            <div className="popup-box">
               <div className="doctor-card-profile-image-container">
-              <img
-                src={`${process.env.PUBLIC_URL}/doctor1.jpg`}
-                alt="Doctor"
-                className="doctor-card-profile-img"
-              />
+                <img
+                  src={`${process.env.PUBLIC_URL}/doctor1.jpg`}
+                  alt="Doctor"
+                  className="doctor-card-profile-img"
+                />
               </div>
               <div className="doctor-card-details">
                 <div className="doctor-card-detail-name">{name}</div>
@@ -96,7 +90,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings }) => {
                 />
               )}
             </div>
-          )}
+          </div>
         </Popup>
       </div>
     </div>

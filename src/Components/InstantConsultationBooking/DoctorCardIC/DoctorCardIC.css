@@ -114,14 +114,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.doctorbg{
-  -webkit-scrollbar {
-    display: none;
-}
 
-
-
-}
 .modal-btn:hover {
   background-color: #0d8af5;
 }
@@ -201,11 +194,43 @@ textarea {
     font-size: 12px;
     font-weight: 500;
   }
-    
-
-
 .btnslot{
   background-color: green;
   cursor: pointer;
   /* color: rgb(249, 60, 60); */
 }
+
+
+.popup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+  }
+  
+  .popup-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+  }
+
+/* Override reactjs-popup modal wrapper background */
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Remove the inner white space added by default */
+  .popup-content {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  
