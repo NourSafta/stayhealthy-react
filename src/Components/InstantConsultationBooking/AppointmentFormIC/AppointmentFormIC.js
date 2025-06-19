@@ -8,7 +8,17 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ name, phoneNumber, date, time });
+
+    const appointment = { name, phoneNumber, date, time };
+
+    
+    localStorage.setItem('doctorData', JSON.stringify({ name: doctorName, speciality: doctorSpeciality }));
+    localStorage.setItem(doctorName, JSON.stringify(appointment));
+
+    // Callback
+    onSubmit(appointment);
+
+    // Reset form
     setName('');
     setPhoneNumber('');
     setDate('');
