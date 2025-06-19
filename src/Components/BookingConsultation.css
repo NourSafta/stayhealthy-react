@@ -1,0 +1,11 @@
+.booking-consultation-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.doctor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
