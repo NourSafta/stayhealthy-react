@@ -1,0 +1,20 @@
+.review-form {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.feedback-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedback-button:hover {
+  background-color: #0056b3;
+}
