@@ -1,11 +1,14 @@
 import React from 'react';
 import './Reviews.css';
+import { Link } from 'react-router-dom';
 
 const Reviews = () => {
   const doctors = [
     { id: 1, name: 'Dr. John Doe', speciality: 'Cardiology' },
     { id: 2, name: 'Dr. Jane Smith', speciality: 'Dermatology' }
   ];
+
+  const storedReviews = JSON.parse(localStorage.getItem("doctorReviews") || "{}");
 
   return (
     <div className="reviews-page">
@@ -17,7 +20,7 @@ const Reviews = () => {
             <th>Doctor Name</th>
             <th>Doctor Speciality</th>
             <th>Provide Feedback</th>
-            <th>Review Given</th> 
+            <th>Review Given</th>
           </tr>
         </thead>
         <tbody>
@@ -27,11 +30,18 @@ const Reviews = () => {
               <td>{doc.name}</td>
               <td>{doc.speciality}</td>
               <td>
-                <button className="feedback-btn">
-                  Click Here
-                </button>
+                {storedReviews[doc.name] ? (
+                    <button className="feedback-btn" disabled style={{ backgroundColor: '#ccc', cursor: 'not-allowed' }}>
+                    Click Here
+                    </button>
+                ) : (
+                    <Link to="/reviewform" state={{ doctorName: doc.name }}>
+                    <button className="feedback-btn">Click Here</button>
+                    </Link>
+                )}
               </td>
-              <td></td> 
+
+              <td>{storedReviews[doc.name] || ''}</td>
             </tr>
           ))}
         </tbody>

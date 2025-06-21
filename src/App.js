@@ -7,6 +7,7 @@ import InstantConsultation from "./Components/InstantConsultationBooking/Instant
 import BookingConsultation from "./Components/BookingConsultation";
 import Notification from "./Components/Notification/Notification";
 import Reviews from "./Components/Reviews/Reviews"; 
+import ReviewForm from "./Components/ReviewForm/ReviewForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/instant-consultation" element={<InstantConsultation />} />
         <Route path="/booking-consultation" element={<BookingConsultation />} />
         <Route path="/reviews" element={<Reviews />} />
+        <Route path="/reviewform" element={<ReviewForm />} />
       </Routes>
     </Notification>
   );

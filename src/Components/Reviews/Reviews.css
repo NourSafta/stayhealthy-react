@@ -33,4 +33,12 @@
   .feedback-btn:hover {
     background-color: #0c51b8;
   }
+
+  .feedback-btn[disabled] {
+    background-color: #ccc;
+    color: #555;
+  }
+
+  
+  
   
