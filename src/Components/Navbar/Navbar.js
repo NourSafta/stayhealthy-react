@@ -30,8 +30,17 @@ const Navbar = () => {
       <div className="auth-buttons">
         {isLoggedIn ? (
           <>
-            <span className="user-name">{name?.split("@")[0]}</span>
-            <button className="logout" onClick={handleLogout}>Logout</button>
+            <div className="profile-container">
+              <span className="profile-trigger">
+                Welcome, <strong>{name?.split("@")[0]}</strong>
+              </span>
+              <div className="profile-dropdown">
+                <div>Your Profile</div>
+              </div>
+            </div>
+            <button className="logout-button-inline" onClick={handleLogout}>
+              Logout
+            </button>
           </>
         ) : (
           <>
