@@ -1,88 +1,124 @@
 .review-form {
-  background-color: #fdfdfd; 
-  padding: 30px;
-  border-radius: 12px;
-  border: 1.5px solid #ddd; 
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08); 
-  max-width: 600px;
-  margin: 40px auto;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
-  color: #222;
-}
-
-
-.review-form h3 {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.review-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #333;
-}
-
-.review-form input,
-.review-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 14px;
-  border: 1.8px solid #bbb;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  font-family: inherit;
-  background-color: #fff;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  color: #333;
-}
-
-.review-form input:focus,
-.review-form textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
-}
-
-.review-form input::placeholder,
-.review-form textarea::placeholder {
-  color: #999;
-  font-size: 14px;
-}
-
-.review-form .rating {
-  margin-bottom: 25px;
-}
-
-.review-form .rating span {
-  font-size: 24px;
-  cursor: pointer;
-  color: lightgray;
-  transition: color 0.2s ease;
-  padding: 0 3px;
-}
-
-.review-form .rating span.selected,
-.review-form .rating span:hover {
-  color: gold;
-}
-
-.review-form button {
-  width: 100%;
-  padding: 14px;
-  background-color: #0066ff;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.review-form button:hover {
-  background-color: #0052cc;
-}
+    background-color: #fdfdfd;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1.8px solid #ccc;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: #222;
+  }
+  
+  .review-form h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .review-form .doctor-speciality {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .review-form input,
+  .review-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1.8px solid #bbb;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    background-color: #fff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    color: #333;
+  }
+  
+  .review-form input:focus,
+  .review-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+  }
+  
+  .review-form input::placeholder,
+  .review-form textarea::placeholder {
+    color: #999;
+    font-size: 14px;
+  }
+  
+  .review-form .rating {
+    margin-bottom: 25px;
+  }
+  
+  .review-form .stars {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .review-form .star {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  .review-form .star.selected,
+  .review-form .star:hover,
+  .review-form .star:focus {
+    color: gold;
+    outline: none;
+  }
+  
+  .review-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #0066ff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .review-form button:hover {
+    background-color: #0052cc;
+  }
+  
+  .review-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 600px) {
+    .review-form {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    .review-form h3 {
+      font-size: 20px;
+    }
+  
+    .review-form button {
+      font-size: 15px;
+    }
+  }
+  
