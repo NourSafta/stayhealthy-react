@@ -6,7 +6,15 @@ import logo from "./logo.png";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const name = sessionStorage.getItem("name");
+  let username = "User";
+  try {
+    const raw = sessionStorage.getItem("name");
+    username = raw ? JSON.parse(raw) : "User";
+  } catch (e) {
+    console.error("Invalid session name data", e);
+    sessionStorage.removeItem("name");
+  }
+
   const isLoggedIn = sessionStorage.getItem("auth-token");
 
   const handleLogout = () => {
@@ -32,10 +40,10 @@ const Navbar = () => {
           <>
             <div className="profile-container">
               <span className="profile-trigger">
-                Welcome, <strong>{name?.split("@")[0]}</strong>
+                Welcome, <strong>{username}</strong>
               </span>
               <div className="profile-dropdown">
-                <div>Your Profile</div>
+                <Link to="/profile" className="profile-link">Your Profile</Link>
               </div>
             </div>
             <button className="logout-button-inline" onClick={handleLogout}>

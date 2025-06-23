@@ -24,13 +24,13 @@ const ReviewForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.review && formData.rating > 0) {
-      const stored = JSON.parse(localStorage.getItem('reviews')) || {};
+      const stored = JSON.parse(localStorage.getItem('doctorReviews')) || {};
       stored[doctorName] = {
         name: formData.name,
         review: formData.review,
         rating: formData.rating
       };
-      localStorage.setItem('reviews', JSON.stringify(stored));
+      localStorage.setItem('doctorReviews', JSON.stringify(stored));
       navigate('/reviews');
     } else {
       alert('Please fill in all fields and select a rating.');

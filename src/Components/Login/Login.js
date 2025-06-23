@@ -19,10 +19,7 @@ const Login = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
+      body: JSON.stringify({ email, password }),
     });
 
     const json = await response.json();
@@ -30,19 +27,12 @@ const Login = () => {
     if (json.authtoken) {
       sessionStorage.setItem("auth-token", json.authtoken);
       sessionStorage.setItem("email", email);
-
-      // Extract username before @
-      const nameFromEmail = email.split("@")[0];
-      sessionStorage.setItem("name", nameFromEmail);
+      sessionStorage.setItem("name", JSON.stringify(email.split("@")[0])); // safe stringify
 
       navigate("/");
       window.location.reload();
     } else {
-      if (json.errors) {
-        setError(json.errors[0].msg);
-      } else {
-        setError(json.error || "Login failed");
-      }
+      setError(json.errors?.[0]?.msg || json.error || "Login failed");
     }
   };
 

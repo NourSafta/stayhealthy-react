@@ -30,8 +30,12 @@ const Reviews = () => {
               <td>{doc.name}</td>
               <td>{doc.speciality}</td>
               <td>
-                {storedReviews[doc.name] ? (
-                    <button className="feedback-btn" disabled style={{ backgroundColor: '#ccc', cursor: 'not-allowed' }}>
+                {storedReviews[doc.name]?.review?.trim() ? (
+                    <button
+                    className="feedback-btn"
+                    disabled
+                    style={{ backgroundColor: '#ccc', cursor: 'not-allowed' }}
+                    >
                     Click Here
                     </button>
                 ) : (
@@ -39,9 +43,9 @@ const Reviews = () => {
                     <button className="feedback-btn">Click Here</button>
                     </Link>
                 )}
-              </td>
+               </td>
 
-              <td>{storedReviews[doc.name] || ''}</td>
+              <td>{storedReviews[doc.name]?.review || ''}</td>
             </tr>
           ))}
         </tbody>
