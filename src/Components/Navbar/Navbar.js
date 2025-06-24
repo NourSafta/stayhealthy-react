@@ -49,6 +49,7 @@ if (raw?.startsWith('"') && raw?.endsWith('"')) {
               </span>
               <div className="profile-dropdown">
                 <Link to="/profileform" className="profile-link">Your Profile</Link>
+                <Link to="/reports" className="profile-link">Your Reports</Link>
               </div>
             </div>
             <button className="logout-button-inline" onClick={handleLogout}>

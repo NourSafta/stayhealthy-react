@@ -52,9 +52,56 @@
     background-color: #0056b3;
   }
   
+  /* Styling for profile details (view mode) */
+  .profile-details {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .profile-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
   .profile-details p {
     font-size: 16px;
     margin-bottom: 10px;
     color: #333;
+  }
+  
+  /* Button in view mode */
+  .profile-details button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-details button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive design for mobile */
+  @media (max-width: 480px) {
+    .profile-form-wrapper {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    .profile-form-wrapper input,
+    .profile-form-wrapper button,
+    .profile-details button {
+      font-size: 14px;
+      padding: 10px;
+    }
   }
   
