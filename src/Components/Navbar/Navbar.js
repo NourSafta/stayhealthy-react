@@ -7,13 +7,18 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   let username = "User";
+const raw = sessionStorage.getItem("name");
+
+if (raw?.startsWith('"') && raw?.endsWith('"')) {
   try {
-    const raw = sessionStorage.getItem("name");
-    username = raw ? JSON.parse(raw) : "User";
+    username = JSON.parse(raw);
   } catch (e) {
-    console.error("Invalid session name data", e);
-    sessionStorage.removeItem("name");
+    console.warn("Corrupted name in sessionStorage:", raw);
   }
+} else if (raw) {
+  username = raw;
+}
+
 
   const isLoggedIn = sessionStorage.getItem("auth-token");
 
@@ -43,7 +48,7 @@ const Navbar = () => {
                 Welcome, <strong>{username}</strong>
               </span>
               <div className="profile-dropdown">
-                <Link to="/profile" className="profile-link">Your Profile</Link>
+                <Link to="/profileform" className="profile-link">Your Profile</Link>
               </div>
             </div>
             <button className="logout-button-inline" onClick={handleLogout}>

@@ -27,7 +27,7 @@ const Login = () => {
     if (json.authtoken) {
       sessionStorage.setItem("auth-token", json.authtoken);
       sessionStorage.setItem("email", email);
-      sessionStorage.setItem("name", JSON.stringify(email.split("@")[0])); // safe stringify
+      sessionStorage.setItem("name", email.split("@")[0]);
 
       navigate("/");
       window.location.reload();
