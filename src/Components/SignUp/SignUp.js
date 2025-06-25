@@ -32,7 +32,13 @@ const SignUp = () => {
         navigate("/");
         window.location.reload();
       } else {
-        setErrorMsg(data.error || "Registration failed.");
+        if (Array.isArray(data.error)) {
+          setErrorMsg(data.error.map(err => err.msg).join(", "));
+        } else if (typeof data.error === 'object' && data.error.msg) {
+          setErrorMsg(data.error.msg);
+        } else {
+          setErrorMsg(data.error || "Registration failed.");
+        }
       }
     } catch (err) {
       setErrorMsg("Server error. Please try again.");
