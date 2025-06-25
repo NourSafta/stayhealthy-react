@@ -1,52 +1,75 @@
 .reports-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.reports-container h1 {
-  text-align: left;
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #000;
-}
-
-.reports-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.reports-table th,
-.reports-table td {
-  padding: 14px 20px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
-}
-
-.reports-table th {
-  background-color: #f4f4f4;
-  font-weight: 600;
-}
-
-.view-btn,
-.download-btn {
-  padding: 10px 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background-color 0.3s ease;
-}
-
-.view-btn:hover,
-.download-btn:hover {
-  background-color: #0056b3;
-}
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .reports-container h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+  }
+  
+  /* Make table responsive */
+  .reports-table-container {
+    overflow-x: auto;
+  }
+  
+  .reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    transition: all 0.3s ease;
+  }
+  
+  .reports-table th,
+  .reports-table td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  .reports-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+  }
+  
+  .reports-table thead tr {
+    border-top: 2px solid #ddd;
+  }
+  
+  .reports-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .reports-table td:first-child {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .view-btn,
+  .download-btn {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .view-btn:hover,
+  .download-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 91, 187, 0.2);
+  }
+  
