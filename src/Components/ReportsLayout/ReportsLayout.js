@@ -35,10 +35,23 @@ const ReportsLayout = () => {
               <td>{report.doctorName}</td>
               <td>{report.specialty}</td>
               <td>
-                <button className="view-btn">View Report</button>
+                <a
+                  href={`${process.env.PUBLIC_URL}/patient_report.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="view-btn"
+                >
+                  View Report
+                </a>
               </td>
               <td>
-                <button className="download-btn">Download Report</button>
+                <a
+                  href={`${process.env.PUBLIC_URL}/patient_report.pdf`}
+                  download
+                  className="download-btn"
+                >
+                  Download Report
+                </a>
               </td>
             </tr>
           ))}
